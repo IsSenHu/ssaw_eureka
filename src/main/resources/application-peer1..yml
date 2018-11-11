@@ -1,0 +1,22 @@
+server:
+  port: 10001
+
+spring:
+  application:
+    name: ssaw-eureka
+  security:                         #配置认证用户
+    user:
+      name: admin
+      password: 14780118635
+eureka:
+  instance:
+    hostname: admin:14780118635@localhost
+  server:
+    enable-self-preservation: true #开启自我保护
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:10002/eureka/
+
+
